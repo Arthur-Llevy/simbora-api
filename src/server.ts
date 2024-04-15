@@ -10,7 +10,7 @@ import { createEvent } from './routes/create-event';
 const app = fastify();
 
 app.register(fastifyCors, {
-	origin: '*'
+	origin: 'https://simbora-web.vercel.app/'
 })
 
 app.setSerializerCompiler(serializerCompiler);
