@@ -1,7 +1,9 @@
 import {
+  init_login,
   login
-} from "../chunk-S3CLPMB4.mjs";
-import "../chunk-ZKD6EWI5.mjs";
+} from "../chunk-PYX5TCR2.mjs";
+import "../chunk-P4XBUVW2.mjs";
+init_login();
 export {
   login
 };

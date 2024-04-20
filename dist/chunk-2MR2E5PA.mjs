@@ -1,0 +1,42 @@
+import {
+  __async,
+  __esm,
+  init_prisma,
+  prisma
+} from "./chunk-P4XBUVW2.mjs";
+
+// src/routes/create-register.ts
+import { z } from "zod";
+function createRegister(app) {
+  return __async(this, null, function* () {
+    app.withTypeProvider().post("/users/create-register", {
+      schema: {
+        body: z.object({
+          name: z.string(),
+          email: z.string().email(),
+          password: z.string()
+        })
+      }
+    }, (request, reply) => __async(this, null, function* () {
+      const { email, password, name } = request.body;
+      const user = yield prisma.user.create({
+        data: {
+          email,
+          password,
+          name
+        }
+      });
+      return reply.status(201).send({ user });
+    }));
+  });
+}
+var init_create_register = __esm({
+  "src/routes/create-register.ts"() {
+    init_prisma();
+  }
+});
+
+export {
+  createRegister,
+  init_create_register
+};

@@ -1,7 +1,9 @@
 import {
-  getOneEvent
-} from "../chunk-6RKHSUYG.mjs";
-import "../chunk-ZKD6EWI5.mjs";
+  getOneEvent,
+  init_get_one_event
+} from "../chunk-UZOBRDSY.mjs";
+import "../chunk-P4XBUVW2.mjs";
+init_get_one_event();
 export {
   getOneEvent
 };
