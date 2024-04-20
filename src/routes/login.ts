@@ -15,20 +15,24 @@ export async function login(app: FastifyInstance){
 		}
 	}, async (request, reply) => {
 
-		const { email, password } = request.body;
+		try {
 
-		const user = await prisma.user.findUnique({
-			where: {
-				email,
+			const { email, password } = request.body;
+
+			const user = await prisma.user.findUnique({
+				where: {
+					email,
+				}
+			});
+
+			if (user !== null && user.password === password) {
+				return reply.status(200).send({ user });
 			}
-		});
+			return reply.status(401).send({});
 
-		if (user !== null && user.password === password) {
-			return reply.status(200).send({ user });
+		}catch (err) {
+			console.log(`Something wrong: ${err}`)
 		}
-
-		
-		return reply.status(401).send({});
 
 	})
 };
