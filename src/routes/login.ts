@@ -17,14 +17,13 @@ export async function login(app: FastifyInstance){
 
 		const { email, password } = request.body;
 
-		const user = await prisma.user.findFirst({
+		const user = await prisma.user.findUnique({
 			where: {
 				email,
-				password
 			}
 		});
 
-		if (user !== null) {
+		if (user !== null && user.password === password) {
 			return reply.status(200).send({ user });
 		}
 
