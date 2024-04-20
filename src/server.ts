@@ -5,6 +5,7 @@ import { serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod
 
 // Routes
 import { getAllEvents } from './routes/get-all-events';
+import { getOneEvent } from './routes/get-one-event';
 import { createEvent } from './routes/create-event';
 import { login } from './routes/login';
 import { createRegister } from './routes/create-register';
@@ -12,13 +13,14 @@ import { createRegister } from './routes/create-register';
 const app = fastify();
 
 app.register(fastifyCors, {
-	origin: 'https://simbora-web.vercel.app/'
+	origin: '*'
 })
 
 app.setSerializerCompiler(serializerCompiler);
 app.setValidatorCompiler(validatorCompiler);
 
 app.register(getAllEvents);
+app.register(getOneEvent);
 app.register(createEvent);
 app.register(login);
 app.register(createRegister);

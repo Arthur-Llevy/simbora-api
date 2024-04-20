@@ -3,13 +3,16 @@ import {
 } from "./chunk-WSGREQGR.mjs";
 import {
   createRegister
-} from "./chunk-WEJWYJ2G.mjs";
+} from "./chunk-B4TIFDCQ.mjs";
 import {
   getAllEvents
-} from "./chunk-WHK7YXFO.mjs";
+} from "./chunk-WUUDG5NI.mjs";
+import {
+  getOneEvent
+} from "./chunk-6PPEHXMP.mjs";
 import {
   login
-} from "./chunk-BJBMP32M.mjs";
+} from "./chunk-SXO26V2A.mjs";
 import "./chunk-JIUPXA24.mjs";
 
 // src/server.ts
@@ -18,11 +21,12 @@ import { fastifyCors } from "@fastify/cors";
 import { serializerCompiler, validatorCompiler } from "fastify-type-provider-zod";
 var app = fastify();
 app.register(fastifyCors, {
-  origin: "https://simbora-web.vercel.app/"
+  origin: "*"
 });
 app.setSerializerCompiler(serializerCompiler);
 app.setValidatorCompiler(validatorCompiler);
 app.register(getAllEvents);
+app.register(getOneEvent);
 app.register(createEvent);
 app.register(login);
 app.register(createRegister);

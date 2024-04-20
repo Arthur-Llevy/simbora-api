@@ -25,10 +25,11 @@ export async function login(app: FastifyInstance){
 		});
 
 		if (user !== null) {
-			return reply.status(200).send({ message: 'Ok' });
+			return reply.status(200).send({ user });
 		}
 
-		return reply.status(401).send();
+		
+		return reply.status(401).send({});
 
 	})
 };

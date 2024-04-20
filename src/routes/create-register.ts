@@ -9,18 +9,20 @@ export async function createRegister(app: FastifyInstance){
 	.post('/users/create-register', {
 		schema: {
 			body: z.object({
+				name: z.string(),
 				email: z.string().email(),
 				password: z.string()
 			})
 		}
 	}, async (request, reply) => {
 
-		const { email, password } = request.body;
+		const { email, password, name } = request.body;
 
 		const user = await prisma.user.create({
 			data: {
 				email,
-				password
+				password,
+				name
 			}
 		});
 

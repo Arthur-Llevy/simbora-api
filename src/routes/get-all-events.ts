@@ -12,6 +12,7 @@ export async function getAllEvents(app: FastifyInstance){
 				200: z.object({
 					events: z.array(
 						z.object({
+							id: z.number(),
 							name: z.string(),
 							localization: z.string(),
 							type: z.string(),

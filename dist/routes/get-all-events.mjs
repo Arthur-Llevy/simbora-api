@@ -1,6 +1,6 @@
 import {
   getAllEvents
-} from "../chunk-WHK7YXFO.mjs";
+} from "../chunk-WUUDG5NI.mjs";
 import "../chunk-JIUPXA24.mjs";
 export {
   getAllEvents
