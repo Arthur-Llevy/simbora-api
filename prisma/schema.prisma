@@ -29,7 +29,17 @@ model User {
   email String @unique
   password String
   type String @default("client")
+  eventsAttended Int @default(0) @map("events_attended")
+  eventsCreated Int @default(0)  @map("events_created")
 
   @@map("user")
 }
 
+
+model EventUser {
+  id Int @id @default(autoincrement())
+  eventId Int @map("event_id")
+  userId Int @map("user_id")
+
+  @@map("event_user")
+}
