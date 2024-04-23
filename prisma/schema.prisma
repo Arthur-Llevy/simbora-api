@@ -31,6 +31,7 @@ model User {
   type String @default("client")
   eventsAttended Int @default(0) @map("events_attended")
   eventsCreated Int @default(0)  @map("events_created")
+  phone String @default("0000-0000")
 
   @@map("user")
 }

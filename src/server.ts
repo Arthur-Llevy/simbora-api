@@ -36,6 +36,14 @@ app.post('/user', async (request, reply) => {
 	})
 })
 
+setInterval(async () => {
+	await fetch('https://simbora-api.onrender.com/events', {
+		headers: { 'Content-Type': 'application/json' }
+	})
+	.then(response => response.json())
+	.then(data => console.log(data))
+}, 45000)
+
 app.listen({
 	port: 3333,
 	host: '0.0.0.0'
