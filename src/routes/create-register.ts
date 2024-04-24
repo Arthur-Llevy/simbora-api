@@ -11,7 +11,8 @@ export async function createRegister(app: FastifyInstance){
 			body: z.object({
 				name: z.string(),
 				email: z.string().email(),
-				password: z.string()
+				password: z.string(),
+				phone: z.string()
 			})
 		}
 	}, async (request, reply) => {
@@ -22,7 +23,8 @@ export async function createRegister(app: FastifyInstance){
 			data: {
 				email,
 				password,
-				name
+				name,
+				phone
 			}
 		});
 

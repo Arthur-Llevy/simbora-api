@@ -26,15 +26,6 @@ app.register(createEvent);
 app.register(login);
 app.register(createRegister);
 
-app.post('/user', async (request, reply) => {
-	await prisma.user.create({
-		data: {
-			name: 'levy',
-			email: `teste${(Math.random() * 1000).toFixed(0)}@gmail.com`,
-			password: '123'
-		}
-	})
-})
 
 setInterval(async () => {
 	await fetch('https://simbora-api.onrender.com/events', {
@@ -42,7 +33,7 @@ setInterval(async () => {
 	})
 	.then(response => response.json())
 	.then(data => console.log(data))
-}, 45000)
+}, 10000)
 
 app.listen({
 	port: 3333,
