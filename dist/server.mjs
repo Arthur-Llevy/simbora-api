@@ -1,28 +1,27 @@
 import {
   createEvent,
   init_create_event
-} from "./chunk-NPLQPXEP.mjs";
+} from "./chunk-56K6RIZX.mjs";
 import {
   createRegister,
   init_create_register
-} from "./chunk-4HYHYAXF.mjs";
+} from "./chunk-XKAPMIFP.mjs";
 import {
   getAllEvents,
   init_get_all_events
-} from "./chunk-ESAK4IQU.mjs";
+} from "./chunk-7GF7AGIO.mjs";
 import {
   getOneEvent,
   init_get_one_event
-} from "./chunk-UZU3JLI5.mjs";
+} from "./chunk-UZOBRDSY.mjs";
 import {
   init_login,
   login
-} from "./chunk-FZUIBUKQ.mjs";
-import "./chunk-AMKFRBEW.mjs";
+} from "./chunk-3U3GBMMN.mjs";
 import {
   __async,
   __commonJS
-} from "./chunk-HT6JQ5L5.mjs";
+} from "./chunk-P4XBUVW2.mjs";
 
 // src/server.ts
 import fastify from "fastify";
