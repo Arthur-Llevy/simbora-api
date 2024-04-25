@@ -10,6 +10,7 @@ import { getOneEvent } from './routes/get-one-event';
 import { createEvent } from './routes/create-event';
 import { login } from './routes/login';
 import { createRegister } from './routes/create-register';
+import { registerUserOnEvent } from './routes/register-user-on-event';
 
 const app = fastify();
 
@@ -25,6 +26,7 @@ app.register(getOneEvent);
 app.register(createEvent);
 app.register(login);
 app.register(createRegister);
+app.register(registerUserOnEvent);
 
 
 setInterval(async () => {

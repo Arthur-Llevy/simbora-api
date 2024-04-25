@@ -12,20 +12,25 @@ export async function createRegister(app: FastifyInstance){
 				name: z.string(),
 				email: z.string().email(),
 				password: z.string(),
-				phone: z.string()
+				phone: z.string(),
+				events: z.array(z.number())
 			})
 		}
 	}, async (request, reply) => {
 
-		const { email, password, name, phone } = request.body;
+		const { email, password, name, phone, events } = request.body;
 
 		const user = await prisma.user.create({
 			data: {
 				email,
 				password,
 				name,
-				phone
+				phone,
+				events: {
+                    connect: events.map(eventId => ({ id: eventId }))
+                }
 			}
+
 		});
 
 		return reply.status(201).send({ user });

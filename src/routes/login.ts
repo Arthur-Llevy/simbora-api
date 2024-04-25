@@ -13,20 +13,7 @@ export async function login(app: FastifyInstance){
 				password: z.string()
 			}),
 
-			response: {
-				200: z.object({ 
-					user: z.object({
-						id: z.number(),
-					    name: z.string(),
-					    email: z.string(),
-					    password: z.string(),
-					    type: z.string(),
-					    eventsAttended: z.number(),
-					    eventsCreated: z.number(),
-					    phone: z.string()
-					 })
-				})
-			}
+			
 		}
 	}, async (request, reply) => {
 
@@ -36,7 +23,10 @@ export async function login(app: FastifyInstance){
 			const user = await prisma.user.findUnique({
 				where: {
 					email,
-				}
+				},
+				include: {
+					events: true
+				}			
 			});
 
 			if(user === null){

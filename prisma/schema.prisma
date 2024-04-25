@@ -19,6 +19,7 @@ model Event {
   date String
   startsAt String
   endsAt String
+  users User[]
 
   @@map("event")
 }
@@ -33,14 +34,11 @@ model User {
   eventsCreated Int @default(0)  @map("events_created")
   phone String @default("0000-0000")
 
+  events Event[] 
+
   @@map("user")
 }
 
 
-model EventUser {
-  id Int @id @default(autoincrement())
-  eventId Int @map("event_id")
-  userId Int @map("user_id")
 
-  @@map("event_user")
-}
+

@@ -5,7 +5,7 @@ import {
 import {
   createRegister,
   init_create_register
-} from "./chunk-RAU6UCQQ.mjs";
+} from "./chunk-FADJKRRK.mjs";
 import {
   getAllEvents,
   init_get_all_events
@@ -17,7 +17,11 @@ import {
 import {
   init_login,
   login
-} from "./chunk-DJUHWTLA.mjs";
+} from "./chunk-3EFXFXJO.mjs";
+import {
+  init_register_user_on_event,
+  registerUserOnEvent
+} from "./chunk-7KEAQRVU.mjs";
 import {
   __async,
   __commonJS
@@ -34,6 +38,7 @@ var require_server = __commonJS({
     init_create_event();
     init_login();
     init_create_register();
+    init_register_user_on_event();
     var app = fastify();
     app.register(fastifyCors, {
       origin: "*"
@@ -45,6 +50,7 @@ var require_server = __commonJS({
     app.register(createEvent);
     app.register(login);
     app.register(createRegister);
+    app.register(registerUserOnEvent);
     setInterval(() => __async(exports, null, function* () {
       yield fetch("https://simbora-api.onrender.com/events", {
         headers: { "Content-Type": "application/json" }
