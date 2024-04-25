@@ -5,7 +5,7 @@ import {
 import {
   createRegister,
   init_create_register
-} from "./chunk-XKAPMIFP.mjs";
+} from "./chunk-RAU6UCQQ.mjs";
 import {
   getAllEvents,
   init_get_all_events

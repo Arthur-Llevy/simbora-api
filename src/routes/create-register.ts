@@ -17,7 +17,7 @@ export async function createRegister(app: FastifyInstance){
 		}
 	}, async (request, reply) => {
 
-		const { email, password, name } = request.body;
+		const { email, password, name, phone } = request.body;
 
 		const user = await prisma.user.create({
 			data: {
