@@ -50,8 +50,8 @@ var require_server = __commonJS({
         consumes: ["application/json"],
         produces: ["application/json"],
         info: {
-          title: "pass.in",
-          description: "Especifica\xE7\xF5es da API Pass.in",
+          title: "Simbora - API",
+          description: "Especifica\xE7\xF5es da API do projeto Simbora",
           version: "1.0"
         }
       },
